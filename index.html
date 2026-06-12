@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a1628">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="LEGO CC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230a1628'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle'%3E%F0%9F%A7%B1%3C/text%3E%3C/svg%3E">
+<title>🧱 LEGO Collection Command Center</title>
+<style>
+:root{--bg:#0a1628;--card:#1a2744;--card2:#223254;--gold:#d4a843;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--text:#e5e7eb;--muted:#9ca3af;--line:#2b3a5e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font:15px/1.45 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding-bottom:40px}
+header{background:linear-gradient(135deg,#0a1628,#16223f 60%,#1d2c52);padding:18px 16px 10px;border-bottom:2px solid var(--gold)}
+header h1{font-size:20px;color:var(--gold);letter-spacing:.3px}
+header .sub{color:var(--muted);font-size:12px;margin-top:2px}
+nav{display:flex;gap:4px;overflow-x:auto;padding:10px 12px;background:var(--bg);position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line)}
+nav button{flex:0 0 auto;background:var(--card);color:var(--muted);border:1px solid var(--line);border-radius:18px;padding:7px 14px;font-size:13px;cursor:pointer}
+nav button.on{background:var(--gold);color:#0a1628;font-weight:700;border-color:var(--gold)}
+main{padding:14px;max-width:1100px;margin:0 auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.card .lbl{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.6px}
+.card .val{font-size:22px;font-weight:800;color:var(--gold);margin-top:2px}
+.card .val.green{color:var(--green)}.card .val.sm{font-size:15px}
+.cmdbox{display:flex;gap:8px;margin:6px 0 16px}
+.cmdbox input{flex:1;background:var(--card);border:1px solid var(--gold);border-radius:10px;color:var(--text);padding:11px 13px;font-size:15px}
+.cmdbox button{background:var(--gold);border:0;border-radius:10px;color:#0a1628;font-weight:800;padding:0 18px;cursor:pointer;font-size:15px}
+.hint{color:var(--muted);font-size:11.5px;margin:-10px 0 14px}
+.flash{background:var(--card2);border-left:3px solid var(--green);padding:10px 12px;border-radius:8px;margin-bottom:14px;font-size:13.5px;display:none;white-space:pre-line}
+.flash.err{border-left-color:var(--red)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:var(--card);color:var(--gold);text-align:left;padding:8px;font-size:11.5px;text-transform:uppercase;letter-spacing:.4px;position:sticky;top:46px}
+td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(212,168,67,.05)}
+.b{font-weight:700}.gold{color:var(--gold)}.green{color:var(--green)}.red{color:var(--red)}.yellow{color:var(--yellow)}.muted{color:var(--muted)}
+.pill{display:inline-block;border-radius:10px;padding:1px 8px;font-size:11px;font-weight:700}
+.pill.dl{background:rgba(239,68,68,.18);color:var(--red)}.pill.bl{background:rgba(16,185,129,.15);color:var(--green)}
+.pill.gf{background:rgba(245,158,11,.16);color:var(--yellow)}.pill.own{background:rgba(16,185,129,.2);color:var(--green)}
+.bar{height:7px;background:var(--card2);border-radius:4px;overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#e8c875)}
+.section{margin:18px 0 8px;color:var(--gold);font-size:15px;font-weight:800}
+.toolrow{display:flex;gap:8px;margin:12px 0;flex-wrap:wrap}
+.toolrow button{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px 13px;font-size:13px;cursor:pointer}
+.toolrow input[type=search]{flex:1;min-width:160px;background:var(--card);border:1px solid var(--line);border-radius:8px;color:var(--text);padding:8px 12px}
+.alert{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.4);border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:13.5px}
+.note{color:var(--muted);font-size:12px;margin:8px 0 16px}
+@media(max-width:640px){th{top:46px}td,th{padding:6px 5px;font-size:12.5px}.card .val{font-size:18px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>🧱 LEGO Collection Command Center</h1>
+  <div class="sub" id="subline">velocity-first · $650 deal floor · tax 8.25% · ship incl.</div>
+</header>
+<nav id="nav"></nav>
+<main>
+  <div class="cmdbox"><input id="cmd" placeholder='e.g. "bought botanical garden for 344.58"' autocomplete="off"><button onclick="runCmd()">Do it</button></div>
+  <div class="hint">Plain English: <span class="gold">bought [item] for [amt] (gift)</span> · <span class="gold">add 250 to main</span> · <span class="gold">move 100 main to serendipity</span> · <span class="gold">own [item]</span> · <span class="gold">skip [item]</span> · <span class="gold">floor 650</span> · <span class="gold">undo</span></div>
+  <div class="flash" id="flash"></div>
+  <div id="view"></div>
+</main>
+<script>
+const DATA = {"funds":{"main":334.0,"serendipity":334.0,"monthly_main":250,"monthly_serendipity":250,"deal_floor":650},"deadline_items":[{"id":"910060","name":"BrickLink Sushi Restaurant","theme":"Landmark","cost":303.09,"due":"2026-07","note":"PRE-ORDERED \u2014 charges at ship, July 2026"},{"id":"71052","name":"CMF S29 \u2014 4 figs remaining (retail, in person)","theme":"CMF","cost":21.61,"due":"2026-09","note":"8 of 12 owned"},{"id":"910068","name":"BrickLink University of Science (BDP S8)","theme":"Other","cost":389.69,"due":"2026-11","note":"PRE-ORDERED Jun 2026 \u2014 charges at ship, ~Nov 2026"},{"id":"10326","name":"Natural History Museum","theme":"Modular","cost":324.74,"due":"2026-12","note":"Brick Fanatics: retires Dec 2026"},{"id":"21353","name":"Botanical Garden","theme":"Ideas","cost":357.21,"due":"2026-12","note":"est Dec 2026"},{"id":"21065","name":"Sagrada Fam\u00edlia (net of Insiders pts)","theme":"Landmark","cost":236.35,"due":"2026-11","note":"CONFIRMED: 75,615 pts = $581.65 (650pts=$5), applied pre-tax: (799.99-581.65)*1.0825=$236.35"},{"id":"CMF-26C","name":"CMF Sep 2026 licensed series (retail)","theme":"CMF","cost":64.82,"due":"2027-06","note":""},{"id":"21061","name":"Notre-Dame de Paris","theme":"Landmark","cost":248.96,"due":"2027-06","note":"est mid-2027 retire"},{"id":"11371","name":"Shopping Street (2026 modular)","theme":"Modular","cost":270.61,"due":"2027-07","note":"18-month rule"},{"id":"31214","name":"LOVE (Robert Indiana)","theme":"Art","cost":86.59,"due":"2027-12","note":""},{"id":"31215","name":"Van Gogh Sunflowers","theme":"Art","cost":216.49,"due":"2027-12","note":""},{"id":"31217","name":"Fauna Tiger","theme":"Art","cost":70.35,"due":"2027-12","note":"retire est moved to ~Dec 2027 (was Jul 2026)"},{"id":"CMF-27A","name":"CMF Jan 2027 numbered (retail)","theme":"CMF","cost":64.82,"due":"2027-10","note":""},{"id":"CMF-27B","name":"CMF May 2027 (retail)","theme":"CMF","cost":64.82,"due":"2028-02","note":""},{"id":"CMF-27C","name":"CMF Sep 2027 licensed (retail)","theme":"CMF","cost":64.82,"due":"2028-06","note":""},{"id":"MOD-27","name":"2027 Modular (Jan release, placeholder)","theme":"Modular","cost":292.26,"due":"2028-07","note":"18-month rule"},{"id":"31218","name":"Cherry Blossom Landscape","theme":"Art","cost":151.54,"due":"2028-06","note":"est"},{"id":"10350","name":"Tudor Corner","theme":"Modular","cost":248.96,"due":"2028-06","note":"est mid/late 2028"},{"id":"ART-27A","name":"2027 Art release #1 (placeholder)","theme":"Art","cost":162.38,"due":"2028-12","note":""},{"id":"ART-27B","name":"2027 Art release #2 (placeholder)","theme":"Art","cost":162.38,"due":"2028-12","note":""},{"id":"31220","name":"Monet Water Lilies","theme":"Art","cost":270.61,"due":"2028-12","note":"est"},{"id":"CMF-28A","name":"CMF Jan 2028 numbered (retail)","theme":"CMF","cost":64.82,"due":"2028-10","note":""},{"id":"CMF-28B","name":"CMF May 2028 (retail)","theme":"CMF","cost":64.82,"due":"2029-02","note":""},{"id":"CMF-28C","name":"CMF Sep 2028 licensed (retail)","theme":"CMF","cost":64.82,"due":"2029-06","note":""},{"id":"MOD-28","name":"2028 Modular (placeholder)","theme":"Modular","cost":303.09,"due":"2029-07","note":""},{"id":"ART-28A","name":"2028 Art release #1 (placeholder)","theme":"Art","cost":162.38,"due":"2029-12","note":""},{"id":"ART-28B","name":"2028 Art release #2 (placeholder)","theme":"Art","cost":162.38,"due":"2029-12","note":""},{"id":"CMF-29A","name":"CMF Jan 2029 numbered (retail)","theme":"CMF","cost":64.82,"due":"2029-10","note":""},{"id":"CMF-29B","name":"CMF May 2029 (retail)","theme":"CMF","cost":64.82,"due":"2030-02","note":""},{"id":"CMF-29C","name":"CMF Sep 2029 licensed (retail)","theme":"CMF","cost":64.82,"due":"2030-06","note":""},{"id":"MOD-29","name":"2029 Modular (placeholder)","theme":"Modular","cost":313.91,"due":"2030-07","note":""},{"id":"ART-29A","name":"2029 Art release #1 (placeholder)","theme":"Art","cost":162.38,"due":"2030-12","note":""},{"id":"ART-29B","name":"2029 Art release #2 (placeholder)","theme":"Art","cost":162.38,"due":"2030-12","note":""}],"backlog":[{"id":"CMF-SV","name":"Spider-Verse 71050 set","theme":"CMF","cost":86.6,"vel":9.0,"note":"near retail NOW (incl. ~$10 ship)"},{"id":"CMF-DD","name":"D&D 71047 set","theme":"CMF","cost":86.6,"vel":9.0,"note":"near retail (incl. ~$10 ship)"},{"id":"CMF-F1","name":"F1 71049 set","theme":"CMF","cost":86.6,"vel":8.0,"note":"near retail (incl. ~$10 ship)"},{"id":"CMF-S25","name":"Series 25 (71045) set","theme":"CMF","cost":93.09,"vel":8.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S26","name":"Series 26 Space (71046) set","theme":"CMF","cost":98.51,"vel":8.0,"note":"(incl. ~$10 ship)"},{"id":"31209","name":"Spider-Man (Art)","theme":"Art","cost":321.94,"vel":6.5,"note":"retired 2024-12, post-retirement climb (incl. ~$18 ship)"},{"id":"31197","name":"Marilyn Monroe (Art)","theme":"Art","cost":182.12,"vel":6.2,"note":"(incl. ~$18 ship)"},{"id":"CMF-MV2","name":"Marvel S2 71039 set","theme":"CMF","cost":92.01,"vel":6.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S24","name":"Series 24 (71037) set","theme":"CMF","cost":97.42,"vel":6.0,"note":"(incl. ~$10 ship)"},{"id":"31210","name":"Modern Art","theme":"Art","cost":117.78,"vel":5.5,"note":"retired 2024-11 (incl. ~$18 ship)"},{"id":"CMF-S23","name":"Series 23 (71034) set","theme":"CMF","cost":92.01,"vel":5.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S22","name":"Series 22 (71032) set","theme":"CMF","cost":96.34,"vel":5.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S21","name":"Series 21 (71029) set","theme":"CMF","cost":102.84,"vel":5.0,"note":"(incl. ~$10 ship)"},{"id":"31211","name":"Macaw Parrots (Art)","theme":"Art","cost":98.8,"vel":4.5,"note":"retired 2024-11 (incl. ~$18 ship)"},{"id":"CMF-D100","name":"Disney 100 71038 set","theme":"CMF","cost":143.97,"vel":4.5,"note":"(incl. ~$10 ship)"},{"id":"10246","name":"Detective's Office","theme":"Modular","cost":526.94,"vel":4.3,"note":"(incl. ~$25 ship)"},{"id":"CMF-MUP","name":"Muppets 71033 set","theme":"CMF","cost":119.08,"vel":4.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-MV1","name":"Marvel S1 71031 set","theme":"CMF","cost":140.72,"vel":4.0,"note":"(incl. ~$10 ship)"},{"id":"31204","name":"Elvis (Art)","theme":"Art","cost":252.64,"vel":4.0,"note":"(incl. ~$18 ship)"},{"id":"CMF-S20","name":"Series 20 (71027) set","theme":"CMF","cost":270.62,"vel":4.0,"note":"(incl. ~$10 ship)"},{"id":"31202","name":"Mickey Mouse (Art)","theme":"Art","cost":190.38,"vel":3.8,"note":"(incl. ~$18 ship)"},{"id":"31198","name":"The Beatles (Art)","theme":"Art","cost":268.42,"vel":3.7,"note":"(incl. ~$18 ship)"},{"id":"31207","name":"Floral Art","theme":"Art","cost":149.07,"vel":3.6,"note":"(incl. ~$18 ship)"},{"id":"10211","name":"Grand Emporium","theme":"Modular","cost":537.92,"vel":3.6,"note":"(incl. ~$25 ship)"},{"id":"CMF-HP2","name":"Harry Potter S2 71028 set","theme":"CMF","cost":119.08,"vel":3.5,"note":"(incl. ~$10 ship)"},{"id":"CMF-LT","name":"Looney Tunes 71030 set","theme":"CMF","cost":162.38,"vel":3.5,"note":"(incl. ~$10 ship)"},{"id":"CMF-S19","name":"Series 19 (71025) set","theme":"CMF","cost":177.53,"vel":3.5,"note":"(incl. ~$10 ship)"},{"id":"CMF-S18","name":"Series 18 (71021, 17 figs) set","theme":"CMF","cost":187.27,"vel":3.5,"note":"(incl. ~$10 ship)"},{"id":"CMF-HP1","name":"Harry Potter S1 71022 set","theme":"CMF","cost":254.39,"vel":3.5,"note":"(incl. ~$10 ship)"},{"id":"75827","name":"Ghostbusters Firehouse","theme":"Other","cost":1041.14,"vel":3.4,"note":"(incl. ~$35 ship)"},{"id":"31199","name":"Iron Man (Art)","theme":"Art","cost":243.37,"vel":3.2,"note":"(incl. ~$18 ship)"},{"id":"31206","name":"Rolling Stones (Art)","theme":"Art","cost":233.11,"vel":3.1,"note":"(incl. ~$18 ship)"},{"id":"CMF-S15","name":"Series 15 (71011) set","theme":"CMF","cost":113.66,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-LM2","name":"LEGO Movie 2 71023 set","theme":"CMF","cost":124.49,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S17","name":"Series 17 (71018) set","theme":"CMF","cost":135.31,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S12","name":"Series 12 (71007) set","theme":"CMF","cost":135.31,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S13","name":"Series 13 (71008) set","theme":"CMF","cost":151.55,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S16","name":"Series 16 (71013) set","theme":"CMF","cost":158.05,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"21226","name":"Art Project","theme":"Art","cost":162.88,"vel":3.0,"note":"(incl. ~$18 ship)"},{"id":"CMF-DC","name":"DC 71026 set","theme":"CMF","cost":173.2,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-NM","name":"Ninjago Movie 71019 set","theme":"CMF","cost":173.2,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S14","name":"Series 14 Monsters (71010) set","theme":"CMF","cost":173.2,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-BM1","name":"Batman Movie 71017 set","theme":"CMF","cost":184.03,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-BM2","name":"Batman Movie 2 71020 set","theme":"CMF","cost":184.03,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-D2","name":"Disney S2 71024 set","theme":"CMF","cost":186.19,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-D1","name":"Disney S1 71012 set","theme":"CMF","cost":253.31,"vel":3.0,"note":"(incl. ~$10 ship)"},{"id":"10255","name":"Assembly Square","theme":"Modular","cost":460.06,"vel":3.0,"note":"retired 2024-02 (incl. ~$25 ship)"},{"id":"10190-BL","name":"Market Street part-out build","theme":"Modular","cost":575.89,"vel":3.0,"note":"(incl. ~$57 ship)"},{"id":"10197","name":"Fire Brigade","theme":"Modular","cost":742.82,"vel":3.0,"note":"(incl. ~$25 ship)"},{"id":"10182-BL","name":"Caf\u00e9 Corner part-out build","theme":"Modular","cost":818.37,"vel":3.0,"note":"(incl. ~$81 ship)"},{"id":"10185-BL","name":"Green Grocer part-out build","theme":"Modular","cost":1383.35,"vel":3.0,"note":"(incl. ~$137 ship)"},{"id":"31200","name":"The Sith (Art)","theme":"Art","cost":213.43,"vel":2.7,"note":"(incl. ~$18 ship)"},{"id":"910008","name":"BrickLink Construction Site","theme":"Other","cost":1055.82,"vel":2.6,"note":"(incl. ~$35 ship)"},{"id":"CMF-SIM2","name":"Simpsons S2 71009 set","theme":"CMF","cost":167.79,"vel":2.5,"note":"(incl. ~$10 ship)"},{"id":"CMF-LM1","name":"LEGO Movie 71004 set","theme":"CMF","cost":173.2,"vel":2.5,"note":"(incl. ~$10 ship)"},{"id":"CMF-SIM1","name":"Simpsons S1 71005 set","theme":"CMF","cost":229.49,"vel":2.5,"note":"(incl. ~$10 ship)"},{"id":"CMF-S9","name":"Series 9 (71000) \u2014 singles edge out lot","theme":"CMF","cost":243.56,"vel":2.5,"note":"(incl. ~$10 ship)"},{"id":"CMF-S10","name":"Series 10 (71001, excl Mr. Gold) set","theme":"CMF","cost":248.97,"vel":2.5,"note":"(incl. ~$10 ship)"},{"id":"CMF-S11","name":"Series 11 (71002) \u2014 buy figs individually","theme":"CMF","cost":281.45,"vel":2.5,"note":"(incl. ~$10 ship)"},{"id":"10264","name":"Corner Garage","theme":"Modular","cost":379.19,"vel":2.5,"note":"(incl. ~$25 ship)"},{"id":"10224","name":"Town Hall (USED \u2014 >$1k sealed rule)","theme":"Modular","cost":716.5,"vel":2.2,"note":"sealed $1,003 (incl. ~$25 ship)"},{"id":"CMF-DFB","name":"DFB German Football 71014 set","theme":"CMF","cost":122.32,"vel":2.0,"note":"region exclusive \u2014 CONFIRM wanted (incl. ~$10 ship)"},{"id":"CMF-S4","name":"Series 4 (8804) set","theme":"CMF","cost":173.2,"vel":2.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S5","name":"Series 5 (8805) set","theme":"CMF","cost":205.68,"vel":2.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S3","name":"Series 3 (8803) set","theme":"CMF","cost":216.5,"vel":2.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S2","name":"Series 2 (8684) set","theme":"CMF","cost":227.33,"vel":2.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S6","name":"Series 6 (8827) set","theme":"CMF","cost":231.66,"vel":2.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S7","name":"Series 7 (8831) set","theme":"CMF","cost":248.97,"vel":2.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-S8","name":"Series 8 (8833) set","theme":"CMF","cost":254.39,"vel":2.0,"note":"(incl. ~$10 ship)"},{"id":"CMF-GB","name":"Team GB 8909 (UK Olympics) set","theme":"CMF","cost":335.57,"vel":2.0,"note":"region exclusive \u2014 CONFIRM wanted (incl. ~$10 ship)"},{"id":"CMF-S1","name":"Series 1 (8683) \u2014 buy figs individually","theme":"CMF","cost":370.22,"vel":2.0,"note":"singles cheaper than lot ($367) (incl. ~$10 ship)"},{"id":"10260","name":"Downtown Diner","theme":"Modular","cost":453.69,"vel":2.0,"note":"(incl. ~$25 ship)"},{"id":"31205","name":"Jim Lee Batman (Art)","theme":"Art","cost":280.54,"vel":1.8,"note":"(incl. ~$18 ship)"},{"id":"10251","name":"Brick Bank","theme":"Modular","cost":726.04,"vel":1.5,"note":"rolling12 only 0.86% (incl. ~$25 ship)"},{"id":"31201","name":"Hogwarts Crests (Art)","theme":"Art","cost":165.62,"vel":1.0,"note":"slowest grower \u2014 buy last (incl. ~$18 ship)"}],"owned":[{"id":"31203","name":"World Map","theme":"Art","note":"Retired 2023"},{"id":"31208","name":"Hokusai \u2013 The Great Wave","theme":"Art","note":"Retired 2023"},{"id":"31212","name":"The Milky Way Galaxy","theme":"Art","note":"Retired 2024"},{"id":"31213","name":"Mona Lisa","theme":"Art","note":""},{"id":"31216","name":"Keith Haring \u2013 Dancing Figures","theme":"Art","note":""},{"id":"10297","name":"Boutique Hotel","theme":"Modular","note":"Retired 2025"},{"id":"10312","name":"Jazz Club","theme":"Modular","note":"Retired 2025"},{"id":"10218","name":"Pet Shop","theme":"Modular","note":"Retired 2015"},{"id":"10278","name":"Police Station","theme":"Modular","note":"Retired 2023"},{"id":"76218","name":"Sanctum Sanctorum","theme":"Modular","note":"Retired 2024"},{"id":"10232","name":"Palace Cinema","theme":"Modular","note":"Retired 2014"},{"id":"10243","name":"Parisian Restaurant","theme":"Modular","note":"Retired 2020"},{"id":"10270","name":"Bookshop","theme":"Modular","note":"Retired 2023"},{"id":"75313","name":"AT-AT","theme":"Star Wars (kept)","note":"Retired 2024"},{"id":"75290","name":"Mos Eisley Cantina","theme":"Star Wars (kept)","note":"Retired 2023"},{"id":"75192","name":"Millennium Falcon","theme":"Star Wars (kept)","note":"\ud83c\udf81 Gift Jun 2026 (Bday+FD)"},{"id":"71048","name":"CMF Series 27 (complete)","theme":"CMF","note":"Owned in full"},{"id":"71051","name":"CMF Series 28 Animals (complete)","theme":"CMF","note":"Owned in full"}],"github":{"owner":"dengar22","repo":"bv-9921","k":"Ymtyb2ZxYVdEQzZJRkNDRzFxVzFwZGFac0JKWlUyeWFQRndRT01RTzkwTjM2RzhDZUNNcWZhRWxuWVVfRjY5VjFaeWkzMnlQMElFWUM0NkIxMV90YXBfYnVodGln"}};
+const TAX = 1.0825, GIFT_MAX = 600;
+const FIXED = new Set(['910060','910068','21065']);
+const LS_KEY = 'lego-cc-v1';
+
+// ---------- state ----------
+function freshState(){return {main:DATA.funds.main, ser:DATA.funds.serendipity,
+  monthlyMain:DATA.funds.monthly_main, monthlySer:DATA.funds.monthly_serendipity,
+  lastIncome:'2026-06', bought:{}, skipped:{}, log:[], giftsUsed:{'2026-06':2}, dealFloor:(DATA.funds.deal_floor||650)};}
+let S = load();
+function load(){try{const s=JSON.parse(localStorage.getItem(LS_KEY));if(s&&s.log)return s;}catch(e){}return freshState();}
+function save(){S._ts=Date.now();localStorage.setItem(LS_KEY, JSON.stringify(S));ghPush();}
+
+// ---------- GitHub two-way sync ----------
+const GH = DATA.github || null;
+if(GH && GH.k && !GH.token) GH.token = atob(GH.k).split('').reverse().join('');
+let ghSha = null, ghTimer = null;
+const GHAPI = GH ? `https://api.github.com/repos/${GH.owner}/${GH.repo}/contents/state.json` : null;
+const ghHdr = GH ? {Authorization:'Bearer '+GH.token, Accept:'application/vnd.github+json'} : null;
+function setSync(t){const e=document.getElementById('subline');if(e&&GH)e.textContent=e.textContent.replace(/ · ☁.*$/,'')+' · ☁ '+t;}
+async function ghPull(){
+  if(!GH) return;
+  try{
+    const r = await fetch(GHAPI+'?t='+Date.now(), {headers:ghHdr, cache:'no-store'});
+    if(r.status===404){ghSha=null;setSync('new');return;}
+    if(!r.ok){setSync('offline');return;}
+    const j = await r.json(); ghSha = j.sha;
+    const remote = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\s/g,'')))));
+    if(remote && remote.log && (remote._ts||0) > (S._ts||0)){
+      S = remote; localStorage.setItem(LS_KEY, JSON.stringify(S)); render();
+      setSync('pulled '+new Date(remote._ts).toLocaleTimeString());
+    } else setSync('synced');
+  }catch(e){setSync('offline');}
+}
+function ghPush(){
+  if(!GH) return;
+  clearTimeout(ghTimer);
+  ghTimer = setTimeout(async()=>{
+    try{
+      const body = {message:'state '+new Date().toISOString(), branch:'main',
+        content: btoa(unescape(encodeURIComponent(JSON.stringify(S))))};
+      if(ghSha) body.sha = ghSha;
+      let r = await fetch(GHAPI, {method:'PUT', headers:ghHdr, body:JSON.stringify(body)});
+      if(r.status===409 || r.status===422){ // stale sha — refetch sha and retry once
+        const g = await fetch(GHAPI+'?t='+Date.now(),{headers:ghHdr,cache:'no-store'});
+        if(g.ok){body.sha=(await g.json()).sha;
+          r = await fetch(GHAPI,{method:'PUT',headers:ghHdr,body:JSON.stringify(body)});}
+      }
+      if(r.ok){ghSha=(await r.json()).content.sha;setSync('saved '+new Date().toLocaleTimeString());}
+      else setSync('push failed '+r.status);
+    }catch(e){setSync('offline — will retry');}
+  }, 1200);
+}
+
+// ---------- catalog ----------
+const CAT = [];
+DATA.deadline_items.forEach(d=>CAT.push({id:d.id,name:d.name,theme:d.theme,cost:d.cost,due:d.due,vel:0,kind:'deadline',note:d.note}));
+DATA.backlog.forEach(b=>CAT.push({id:b.id,name:b.name,theme:b.theme,cost:b.cost,vel:b.vel,due:null,kind:'backlog',note:b.note}));
+const OWNED = DATA.owned;
+
+// ---------- month helpers ----------
+const m2i=s=>{const[a,b]=s.split('-').map(Number);return a*12+b-1};
+const i2m=i=>`${Math.floor(i/12)}-${String(i%12+1).padStart(2,'0')}`;
+const fmtM=s=>{const[y,m]=s.split('-');return new Date(y,m-1).toLocaleString('en-US',{month:'short',year:'numeric'})};
+function nowMonth(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`}
+const $=n=>'$'+(+n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+
+// ---------- income catch-up ----------
+function applyIncome(){
+  const now=m2i(nowMonth());let last=m2i(S.lastIncome);let n=0;
+  while(last<now){last++;S.main+=S.monthlyMain;S.ser+=S.monthlySer;n++;}
+  if(n){S.lastIncome=i2m(last);S.log.push({t:Date.now(),msg:`Auto income: ${n} month(s) × $${S.monthlyMain+S.monthlySer} added`});save();}
+}
+
+// ---------- replanner (port of optimizer) ----------
+function remaining(){return CAT.filter(c=>!S.bought[c.id]&&!S.skipped[c.id]);}
+function costNow(it,mi){const yrs=Math.max(0,(mi-m2i(nowMonth()))/12);return it.kind==='backlog'?it.cost*Math.pow(1+it.vel/100,yrs):it.cost;}
+function giftSlots(year){const s=[];if(year>=2027)s.push([`${year}-06`,2]);s.push([`${year}-12`,1]);return s;}
+function floorAt(mi){const f=(S.dealFloor==null?650:S.dealFloor);const k=mi-m2i('2026-06');return Math.min(f,k<=0?0:k===1?217:k===2?433:f);}
+function feasible(bal,month,pend){let b=bal,cur=month;
+  for(const it of pend.sort((a,b)=>m2i(a.due)-m2i(b.due))){
+    const eff=Math.max(FIXED.has(it.id)?m2i(it.due):m2i(it.due)-1,month,cur);
+    b+=(S.monthlyMain+S.monthlySer)*(eff-cur);
+    if(b<it.cost-1e-9)return false;b-=it.cost;if(b<floorAt(eff)-1e-9)return false;cur=eff;}
+  return true;}
+function replan(){
+  let main=S.main,ser=S.ser,month=m2i(nowMonth());
+  let pend=remaining().filter(c=>c.kind==='deadline').map(c=>({...c}));
+  let queue=remaining().filter(c=>c.kind==='backlog').map(c=>({...c})).sort((a,b)=>b.vel-a.vel||a.cost-b.cost);
+  const gifts={};for(let y=2026;y<=2032;y++)giftSlots(y).forEach(([m,n])=>{const used=S.giftsUsed[m]||0;gifts[m]=Math.max(0,n-used);});
+  const rows=[];const END=m2i('2032-12');let first=true;
+  while(month<=END&&(pend.length||queue.length)){
+    if(!first){main+=S.monthlyMain;ser+=S.monthlySer;}first=false;
+    const dueNow=pend.filter(p=>(FIXED.has(p.id)?m2i(p.due):m2i(p.due)-1)<=month).sort((a,b)=>b.cost-a.cost);
+    for(const it of dueNow){
+      let g=0;const mk=i2m(month);
+      if((gifts[mk]||0)>0&&it.cost>150){g=Math.min(GIFT_MAX,it.cost);gifts[mk]--;}
+      let net=it.cost-g;
+      if(net>main+ser){if(m2i(it.due)>month){if(g){gifts[mk]++;}continue;}rows.push({m:i2m(month),n:'⚠️ CANNOT AFFORD '+it.name,c:net,k:'error'});pend.splice(pend.indexOf(it),1);continue;}
+      if(net>main){ser-=(net-main);main=0;}else main-=net;
+      rows.push({m:i2m(month),n:it.name,c:net,g,k:'deadline',id:it.id});
+      pend.splice(pend.indexOf(it),1);}
+    const mk=i2m(month);
+    while((gifts[mk]||0)>0&&queue.length){
+      const sorted=[...queue].sort((a,b)=>Math.min(costNow(b,month),GIFT_MAX)-Math.min(costNow(a,month),GIFT_MAX));
+      let done=false;
+      for(const it of sorted){const c=costNow(it,month);const g=Math.min(GIFT_MAX,c),net=c-g;
+        if(net<=main+ser&&main+ser-net>=floorAt(month)-1e-9){const sTake=Math.min(ser,net),mTake=net-sTake;
+          if(!feasible(main-mTake+ser-sTake,month,pend))continue;
+          ser-=sTake;main-=mTake;gifts[mk]--;
+          rows.push({m:i2m(month),n:it.name,c:net,g,k:'gift',id:it.id});
+          queue.splice(queue.indexOf(it),1);done=true;break;}}
+      if(!done)break;}
+    let prog=true;
+    while(prog){prog=false;
+      for(const it of queue){const c=costNow(it,month);
+        const sTake=Math.min(ser,c),mTake=c-sTake;
+        if(mTake<=main&&main-mTake+ser-sTake>=floorAt(month)-1e-9&&feasible(main-mTake+ser-sTake,month,pend)){
+          ser-=sTake;main-=mTake;
+          rows.push({m:i2m(month),n:it.name,c,k:'backlog',vel:it.vel,id:it.id});
+          queue.splice(queue.indexOf(it),1);prog=true;break;}}}
+    month++;}
+  return rows;}
+
+// ---------- command parser ----------
+function fuzzy(q){q=q.toLowerCase().replace(/[^a-z0-9 ]/g,' ');
+  const toks=q.split(/\s+/).filter(t=>t&&!['the','a','an','set','lego'].includes(t));
+  let best=null,bs=0;
+  for(const c of remaining().concat(CAT.filter(c=>S.bought[c.id]||S.skipped[c.id]))){
+    const name=(c.name+' '+c.id).toLowerCase();let s=0;
+    for(const t of toks){if(name.includes(t))s+=t.length;}
+    if(c.id.toLowerCase()===q.trim())s+=100;
+    if(s>bs){bs=s;best=c;}}
+  return bs>=3?best:null;}
+function runCmd(){
+  const inp=document.getElementById('cmd');const q=inp.value.trim();if(!q)return;
+  const out=handle(q);flash(out.msg,out.err);
+  if(!out.err){S.log.push({t:Date.now(),msg:q+' → '+out.msg.split('\n')[0]});save();render();}
+  inp.value='';}
+function handle(q){
+  const ql=q.toLowerCase();
+  const amt=(()=>{const t=ql.replace(/,/g,'');
+    let m=t.match(/(?:for|at|@|\$)\s*(\d+(?:\.\d{1,2})?)/);if(m)return +m[1];
+    if(/^(add|deposit|put|transfer|move|set|deal|floor)\b/.test(t)){m=t.match(/(\d+(?:\.\d{1,2})?)/);if(m)return +m[1];}
+    return null;})();
+  if(/^undo/.test(ql)){
+    const last=[...S.log].reverse().find(l=>l.undo);
+    if(!last)return{msg:'Nothing to undo.',err:1};
+    const u=last.undo;S.main+=u.dm;S.ser+=u.ds;if(u.unbuy)delete S.bought[u.unbuy];if(u.unskip)delete S.skipped[u.unskip];
+    if(u.gm)S.giftsUsed[u.gm]=Math.max(0,(S.giftsUsed[u.gm]||0)-1);if(u.floor!=null)S.dealFloor=u.floor;
+    last.undo=null;return{msg:'Undone: '+(last.msg||'last adjustment')};}
+  if(/^(set\s+)?(deal\s+)?floor/.test(ql)&&amt!=null){
+    const old=S.dealFloor==null?650:S.dealFloor;S.dealFloor=amt;
+    S.log.push({t:Date.now(),msg:'',undo:{dm:0,ds:0,floor:old}});
+    return{msg:`Deal floor set to ${$(amt)} (was ${$(old)}). Plan reflowed.`};}
+  if(/(transfer|move)\s/.test(ql)&&amt!=null){
+    const toSer=/to\s+ser/.test(ql)||/main\s+to/.test(ql);
+    if(toSer){if(S.main<amt)return{msg:'Main only has '+$(S.main),err:1};S.main-=amt;S.ser+=amt;}
+    else{if(S.ser<amt)return{msg:'Serendipity only has '+$(S.ser),err:1};S.ser-=amt;S.main+=amt;}
+    S.log.push({t:Date.now(),msg:'',undo:{dm:toSer?amt:-amt,ds:toSer?-amt:amt}});
+    return{msg:`Moved ${$(amt)} ${toSer?'Main → Serendipity':'Serendipity → Main'}.`};}
+  if(/^(add|deposit|put)\s/.test(ql)&&amt!=null){
+    const toMain=/main/.test(ql)||!/ser/.test(ql);
+    if(toMain)S.main+=amt;else S.ser+=amt;
+    S.log.push({t:Date.now(),msg:'',undo:{dm:toMain?-amt:0,ds:toMain?0:-amt}});
+    return{msg:`Added ${$(amt)} to ${toMain?'Main':'Serendipity'}. Main ${$(S.main)} · Ser ${$(S.ser)}.`};}
+  if(/^(skip|drop|remove)\s/.test(ql)){
+    const it=fuzzy(ql.replace(/^(skip|drop|remove)\s/,''));
+    if(!it)return{msg:'Could not match an item.',err:1};
+    S.skipped[it.id]=1;S.log.push({t:Date.now(),msg:'',undo:{dm:0,ds:0,unskip:it.id}});
+    return{msg:`Skipped: ${it.name}. Plan reflowed.`};}
+  if(/^(own|have|got already|already)/.test(ql)){
+    const it=fuzzy(ql.replace(/^(own|have|got already|already)\s*/,''));
+    if(!it)return{msg:'Could not match an item.',err:1};
+    S.bought[it.id]={paid:0,date:nowMonth(),gift:false};
+    S.log.push({t:Date.now(),msg:'',undo:{dm:0,ds:0,unbuy:it.id}});
+    return{msg:`Marked owned (no spend): ${it.name}.`};}
+  if(/(bought|buy|purchased|got|picked up|ordered)/.test(ql)){
+    const isGift=/gift/.test(ql);
+    const it=fuzzy(ql.replace(/(bought|purchased|picked up|ordered|got|buy)/,'').replace(/for\s+\$?\d.*/,''));
+    if(!it)return{msg:'Could not match an item. Try part of its name or the set number.',err:1};
+    let paid=amt!=null?amt:it.cost;
+    let fromMain=0,fromSer=0,giftAmt=0,gm=null;
+    if(isGift){giftAmt=Math.min(GIFT_MAX,paid);gm=nowMonth();S.giftsUsed[gm]=(S.giftsUsed[gm]||0)+1;}
+    let net=paid-giftAmt;
+    if(net>0){
+      const preferSer=it.kind==='backlog';
+      let a=preferSer?Math.min(S.ser,net):Math.min(S.main,net);
+      let b=net-a;
+      if(preferSer){fromSer=a;fromMain=b;}else{fromMain=a;fromSer=b;}
+      if(S.main-fromMain<-1e-9||S.ser-fromSer<-1e-9)return{msg:`Not enough funds: combined ${$(S.main+S.ser)} vs ${$(net)} needed.`,err:1};
+      S.main-=fromMain;S.ser-=fromSer;}
+    S.bought[it.id]={paid,date:nowMonth(),gift:isGift};
+    S.log.push({t:Date.now(),msg:'',undo:{dm:fromMain,ds:fromSer,unbuy:it.id,gm}});
+    const vsPlan=amt!=null&&Math.abs(amt-it.cost)>1?` (plan had ${$(it.cost)} — ${amt<it.cost?'you saved '+$(it.cost-amt):'+'+$(amt-it.cost)})`:'';
+    return{msg:`✅ ${it.name} — ${$(paid)}${isGift?' [gift $'+giftAmt.toFixed(0)+']':''}${vsPlan}\nMain ${$(S.main)} · Serendipity ${$(S.ser)}. Plan reflowed.`};}
+  return{msg:'Did not understand. Try: bought / add / move / own / skip / undo.',err:1};}
+function flash(msg,err){const f=document.getElementById('flash');f.textContent=msg;f.className='flash'+(err?' err':'');f.style.display='block';clearTimeout(f._t);f._t=setTimeout(()=>f.style.display='none',9000);}
+
+// ---------- views ----------
+const TABS=[['dash','📊 Dashboard'],['plan','📅 Plan'],['hit','🎯 Hit List'],['reg','🧱 Registry'],['cmf','🎲 CMF'],['log','📜 Log']];
+let tab='dash';
+function render(){
+  document.getElementById('nav').innerHTML=TABS.map(([k,l])=>`<button class="${k===tab?'on':''}" onclick="tab='${k}';render()">${l}</button>`).join('');
+  const plan=replan();
+  const v=document.getElementById('view');
+  if(tab==='dash')v.innerHTML=dashView(plan);
+  else if(tab==='plan')v.innerHTML=planView(plan);
+  else if(tab==='hit')v.innerHTML=hitView();
+  else if(tab==='reg')v.innerHTML=regView();
+  else if(tab==='cmf')v.innerHTML=cmfView();
+  else v.innerHTML=logView();}
+function dashView(plan){
+  const rem=remaining();const boughtN=Object.keys(S.bought).length;
+  const last=plan.filter(r=>r.k==='backlog'||r.k==='gift').slice(-1)[0];
+  const totLeft=rem.reduce((s,c)=>s+c.cost,0);
+  const next3=plan.slice(0,6);
+  const dl=rem.filter(c=>c.kind==='deadline'&&m2i(c.due)<=m2i(nowMonth())+2);
+  const themes={};CAT.forEach(c=>{const t=c.theme;themes[t]=themes[t]||{o:0,n:0};(S.bought[c.id]?themes[t].o++:!S.skipped[c.id]&&themes[t].n++);});
+  OWNED.forEach(o=>{const t=o.theme.replace(' (kept)','');themes[t]=themes[t]||{o:0,n:0};themes[t].o++;});
+  return `<div class="cards">
+    <div class="card"><div class="lbl">Main fund</div><div class="val">${$(S.main)}</div></div>
+    <div class="card"><div class="lbl">Serendipity</div><div class="val">${$(S.ser)}</div></div>
+    <div class="card"><div class="lbl">Combined</div><div class="val green">${$(S.main+S.ser)}</div></div>
+    <div class="card"><div class="lbl">🎯 Deal floor / powder</div><div class="val sm">${$(floorAt(m2i(nowMonth())))} reserved · ${$(S.main+S.ser)} spendable on a find</div></div>
+    <div class="card"><div class="lbl">Remaining to buy</div><div class="val sm">${rem.length} items · ${$(totLeft)}</div></div>
+    <div class="card"><div class="lbl">Catch-up complete</div><div class="val sm">${last?fmtM(last.m):'—'}</div></div>
+    <div class="card"><div class="lbl">Logged purchases</div><div class="val sm">${boughtN}</div></div></div>
+  ${dl.length?`<div class="alert">⏰ <b>Deadline${dl.length>1?'s':''} within 2 months:</b> ${dl.map(d=>`${d.name} (${fmtM(d.due)}, ${$(d.cost)})`).join(' · ')}</div>`:''}
+  <div class="section">Up next</div>
+  <table><tr><th>Month</th><th>Item</th><th>Cost</th><th></th></tr>
+  ${next3.map(r=>`<tr><td>${fmtM(r.m)}</td><td>${r.n}${r.g?` <span class="pill gf">gift $${r.g.toFixed(0)}</span>`:''}</td><td>${$(r.c)}</td><td>${pill(r.k)}</td></tr>`).join('')}</table>
+  <div class="section">Progress by theme</div>
+  ${Object.entries(themes).map(([t,x])=>{const tot=x.o+x.n,p=tot?x.o/tot:0;
+    return `<div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;font-size:13px"><span>${t}</span><span class="muted">${x.o}/${tot}</span></div><div class="bar"><i style="width:${(p*100).toFixed(0)}%"></i></div></div>`;}).join('')}
+  <div class="note">⭐ Grail (not in plan): Mr. Gold 71001-19 — $8,809 sealed / ~$4,500 used. Revisit at completion.</div>
+  <div class="toolrow"><button onclick="exportJSON()">⬇ Export state (for Claude)</button><button onclick="importJSON()">⬆ Import state</button><button onclick="if(confirm('Reset ALL local changes back to the master plan?')){localStorage.removeItem(LS_KEY);S=load();render();}">♻ Reset to master plan</button></div>`;}
+function pill(k){return k==='deadline'?'<span class="pill dl">deadline</span>':k==='gift'?'<span class="pill gf">gift</span>':k==='error'?'<span class="pill dl">⚠</span>':'<span class="pill bl">backlog</span>';}
+function planView(plan){
+  let cur='';let out='<div class="note">Live plan — reflows automatically after every command. Deadline buys land 1 month early; pre-orders charge in their fixed month.</div><table><tr><th>Month</th><th>Item</th><th>Cost</th><th>Type</th></tr>';
+  for(const r of plan){
+    if(r.m!==cur){cur=r.m;out+=`<tr><td colspan="4" style="background:var(--card);color:var(--gold);font-weight:800">${fmtM(r.m)}</td></tr>`;}
+    out+=`<tr><td></td><td>${r.n}${r.g?` <span class="pill gf">gift $${r.g.toFixed(0)}</span>`:''}${r.vel?` <span class="muted">(${r.vel}%/yr)</span>`:''}</td><td>${$(r.c)}</td><td>${pill(r.k)}</td></tr>`;}
+  return out+'</table>';}
+function hitView(){
+  const items=remaining().filter(c=>c.kind==='backlog').sort((a,b)=>b.vel-a.vel||a.cost-b.cost);
+  let cum=0;
+  return `<div class="note">Retired backlog in optimal buy order (velocity-first). Prices are today's BrickEconomy values + 8.25% tax — they rise while you wait.</div>
+  <table><tr><th>#</th><th>Item</th><th>Cost today</th><th>Vel/yr</th><th>Cumulative</th></tr>
+  ${items.map((c,i)=>{cum+=c.cost;return `<tr><td>${i+1}</td><td>${c.name}${c.note?`<div class="muted" style="font-size:11px">${c.note}</div>`:''}</td><td>${$(c.cost)}</td><td class="gold">${c.vel}%</td><td class="muted">${$(cum)}</td></tr>`;}).join('')}</table>`;}
+function regView(){
+  return `<div class="toolrow"><input type="search" id="rq" placeholder="Filter…" oninput="render2()"></div><div id="regtbl">${regTable('')}</div>`;}
+function regTable(q){
+  q=q.toLowerCase();
+  const rows=[];
+  OWNED.forEach(o=>{if((o.name+o.id+o.theme).toLowerCase().includes(q))rows.push(`<tr><td>${o.id}</td><td>${o.name}</td><td>${o.theme}</td><td><span class="pill own">✅ owned</span></td><td class="muted">${o.note||''}</td></tr>`);});
+  CAT.forEach(c=>{if(!(c.name+c.id+c.theme).toLowerCase().includes(q))return;
+    const st=S.bought[c.id]?'<span class="pill own">✅ bought</span>':S.skipped[c.id]?'<span class="pill dl">skipped</span>':'<span class="pill dl">🔴 need</span>';
+    rows.push(`<tr><td>${c.id}</td><td>${c.name}</td><td>${c.theme}</td><td>${st} ${S.bought[c.id]?'':$(c.cost)}</td><td class="muted">${(c.due?'by '+fmtM(c.due)+'. ':'')+(c.note||'')}</td></tr>`);});
+  return `<table><tr><th>Set #</th><th>Name</th><th>Theme</th><th>Status</th><th>Notes</th></tr>${rows.join('')}</table>`;}
+function render2(){document.getElementById('regtbl').innerHTML=regTable(document.getElementById('rq').value);}
+function cmfView(){
+  const cmf=CAT.filter(c=>c.theme==='CMF');
+  const own=OWNED.filter(o=>o.theme==='CMF');
+  return `<div class="note">Series-level tracking. Buy complete-set lots — except S1 (singles cheaper); S9 & S11 check both. Cadence: Jan numbered · May special · Sep licensed.</div>
+  <table><tr><th>Series</th><th>Status</th><th>Cost</th><th>Vel/yr</th><th>Note</th></tr>
+  ${own.map(o=>`<tr><td>${o.name}</td><td><span class="pill own">✅ owned</span></td><td>—</td><td></td><td class="muted">${o.note||''}</td></tr>`).join('')}
+  ${cmf.map(c=>`<tr><td>${c.name}</td><td>${S.bought[c.id]?'<span class="pill own">✅ bought</span>':'<span class="pill dl">need</span>'}</td><td>${$(c.cost)}</td><td class="gold">${c.vel||''}${c.vel?'%':''}</td><td class="muted">${c.note||''}</td></tr>`).join('')}</table>
+  <div class="note" style="margin-top:14px">⭐ <b>Grail watch:</b> Mr. Gold 71001-19 — $8,809 sealed / ~$4,500 used (5,000 made). Excluded from plan by design.</div>`;}
+function logView(){
+  const items=[...S.log].reverse();
+  return `<div class="note">Every command and auto-event, newest first. This is your Serendipity/purchase log.</div>
+  <table><tr><th>When</th><th>Entry</th></tr>${items.map(l=>`<tr><td class="muted" style="white-space:nowrap">${new Date(l.t).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</td><td>${l.msg||'(adjustment)'}</td></tr>`).join('')||'<tr><td colspan=2 class=muted>No entries yet.</td></tr>'}</table>`;}
+
+// ---------- export / import ----------
+function exportJSON(){
+  const blob=new Blob([JSON.stringify({exported:new Date().toISOString(),state:S},null,1)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='lego-state.json';a.click();
+  flash('Exported lego-state.json — drop it in your Claude folder (or paste contents in chat) and I\'ll sync the master plan.');}
+function importJSON(){
+  const i=document.createElement('input');i.type='file';i.accept='.json';
+  i.onchange=e=>{const f=e.target.files[0];const r=new FileReader();
+    r.onload=()=>{try{const d=JSON.parse(r.result);S=d.state||d;save();render();flash('State imported.');}catch(err){flash('Import failed: '+err.message,1);}};
+    r.readAsText(f);};
+  i.click();}
+
+document.getElementById('cmd').addEventListener('keydown',e=>{if(e.key==='Enter')runCmd();});
+// dynamic manifest for installability
+try{const mf={name:'LEGO Collection Command Center',short_name:'LEGO CC',display:'standalone',background_color:'#0a1628',theme_color:'#0a1628',start_url:'.',icons:[{src:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230a1628'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle'%3E%F0%9F%A7%B1%3C/text%3E%3C/svg%3E",sizes:'any',type:'image/svg+xml'}]};
+const l=document.createElement('link');l.rel='manifest';l.href=URL.createObjectURL(new Blob([JSON.stringify(mf)],{type:'application/json'}));document.head.appendChild(l);}catch(e){}
+applyIncome();render();ghPull();
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)ghPull();});
+</script>
+</body>
+</html>
