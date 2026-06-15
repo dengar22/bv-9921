@@ -5,7 +5,7 @@
   "velocity_note": "fwd %/yr = blend of BrickEconomy rolling 12-mo growth + recency bump"
  },
  "funds": {
-  "main": 334.0,
+  "main": 472.54,
   "serendipity": 334.0,
   "monthly_main": 250,
   "monthly_serendipity": 250,
@@ -49,16 +49,16 @@
    "name": "Natural History Museum",
    "theme": "Modular",
    "cost": 324.74,
-   "due": 24323,
-   "note": "Brick Fanatics: retires Dec 2026"
+   "due": 24318,
+   "note": "retires Dec 2026 but BUY JUNE 2026 (Joshua: sellout risk + June double points)"
   },
   {
    "id": "21353",
    "name": "Botanical Garden",
    "theme": "Ideas",
    "cost": 357.21,
-   "due": 24323,
-   "note": "est Dec 2026"
+   "due": 24318,
+   "note": "retires Dec 2026 but BUY JUNE 2026 (Joshua: sellout risk + June double points)"
   },
   {
    "id": "21065",
@@ -67,6 +67,54 @@
    "cost": 236.35,
    "due": 24322,
    "note": "CONFIRMED: 75,615 pts = $581.65 (650pts=$5), applied pre-tax: (799.99-581.65)*1.0825=$236.35"
+  },
+  {
+   "id": "CMF-SV",
+   "name": "Spider-Verse 71050 set",
+   "theme": "CMF",
+   "cost": 86.6,
+   "due": 24323,
+   "note": "moved to Nov 2026 (was June backlog buy)"
+  },
+  {
+   "id": "CMF-DD",
+   "name": "D&D 71047 set",
+   "theme": "CMF",
+   "cost": 86.6,
+   "due": 24323,
+   "note": "moved to Nov 2026 (was June backlog buy)"
+  },
+  {
+   "id": "CMF-F1",
+   "name": "F1 71049 set",
+   "theme": "CMF",
+   "cost": 86.6,
+   "due": 24323,
+   "note": "moved to Nov 2026 (was June backlog buy)"
+  },
+  {
+   "id": "CMF-S25",
+   "name": "Series 25 (71045) set",
+   "theme": "CMF",
+   "cost": 93.09,
+   "due": 24323,
+   "note": "moved to Nov 2026 (was June backlog buy)"
+  },
+  {
+   "id": "CMF-S26",
+   "name": "Series 26 Space (71046) set",
+   "theme": "CMF",
+   "cost": 98.51,
+   "due": 24323,
+   "note": "moved to Nov 2026 (was June backlog buy)"
+  },
+  {
+   "id": "CMF-MV2",
+   "name": "Marvel S2 71039 set",
+   "theme": "CMF",
+   "cost": 92.01,
+   "due": 24323,
+   "note": "moved to Nov 2026 (was June backlog buy)"
   },
   {
    "id": "CMF-26C",
@@ -311,51 +359,6 @@
  ],
  "backlog": [
   {
-   "id": "CMF-SV",
-   "name": "Spider-Verse 71050 set",
-   "theme": "CMF",
-   "ship": 10.0,
-   "cost": 86.6,
-   "vel": 9.0,
-   "note": "near retail NOW"
-  },
-  {
-   "id": "CMF-DD",
-   "name": "D&D 71047 set",
-   "theme": "CMF",
-   "ship": 10.0,
-   "cost": 86.6,
-   "vel": 9.0,
-   "note": "near retail"
-  },
-  {
-   "id": "CMF-F1",
-   "name": "F1 71049 set",
-   "theme": "CMF",
-   "ship": 10.0,
-   "cost": 86.6,
-   "vel": 8.0,
-   "note": "near retail"
-  },
-  {
-   "id": "CMF-S25",
-   "name": "Series 25 (71045) set",
-   "theme": "CMF",
-   "ship": 10.0,
-   "cost": 93.09,
-   "vel": 8.0,
-   "note": ""
-  },
-  {
-   "id": "CMF-S26",
-   "name": "Series 26 Space (71046) set",
-   "theme": "CMF",
-   "ship": 10.0,
-   "cost": 98.51,
-   "vel": 8.0,
-   "note": ""
-  },
-  {
    "id": "31209",
    "name": "Spider-Man (Art)",
    "theme": "Art",
@@ -371,15 +374,6 @@
    "ship": 18.0,
    "cost": 182.12,
    "vel": 6.2,
-   "note": ""
-  },
-  {
-   "id": "CMF-MV2",
-   "name": "Marvel S2 71039 set",
-   "theme": "CMF",
-   "ship": 10.0,
-   "cost": 92.01,
-   "vel": 6.0,
    "note": ""
   },
   {
@@ -989,106 +983,74 @@
  "schedule": [
   {
    "month": "2026-06",
-   "item": "Fauna Tiger",
-   "from_funds": 70.35,
-   "main_after": 54.24,
-   "ser_after": 0.0,
+   "item": "Botanical Garden",
+   "from_funds": 357.21,
+   "main_after": 0.0,
+   "ser_after": 54.24,
    "kind": "deadline"
   },
   {
    "month": "2026-06",
-   "item": "Spider-Verse 71050 set",
-   "from_funds": 86.6,
-   "main_after": 54.24,
-   "ser_after": 0.0,
-   "kind": "backlog v9.0%"
+   "item": "Natural History Museum",
+   "from_funds": 324.74,
+   "main_after": 0.0,
+   "ser_after": 54.24,
+   "kind": "deadline"
   },
   {
    "month": "2026-06",
-   "item": "D&D 71047 set",
-   "from_funds": 86.6,
-   "main_after": 54.24,
-   "ser_after": 0.0,
-   "kind": "backlog v9.0%"
-  },
-  {
-   "month": "2026-06",
-   "item": "F1 71049 set",
-   "from_funds": 86.6,
-   "main_after": 54.24,
-   "ser_after": 0.0,
-   "kind": "backlog v8.0%"
-  },
-  {
-   "month": "2026-06",
-   "item": "Series 25 (71045) set",
-   "from_funds": 93.09,
-   "main_after": 54.24,
-   "ser_after": 0.0,
-   "kind": "backlog v8.0%"
-  },
-  {
-   "month": "2026-06",
-   "item": "Series 26 Space (71046) set",
-   "from_funds": 98.51,
-   "main_after": 54.24,
-   "ser_after": 0.0,
-   "kind": "backlog v8.0%"
-  },
-  {
-   "month": "2026-06",
-   "item": "Marvel S2 71039 set",
-   "from_funds": 92.01,
-   "main_after": 54.24,
-   "ser_after": 0.0,
-   "kind": "backlog v6.0%"
+   "item": "Fauna Tiger",
+   "from_funds": 70.35,
+   "main_after": 0.0,
+   "ser_after": 54.24,
+   "kind": "deadline"
   },
   {
    "month": "2026-07",
    "item": "BrickLink Sushi Restaurant",
    "from_funds": 303.09,
-   "main_after": 1.15,
-   "ser_after": 250.0,
+   "main_after": 0.0,
+   "ser_after": 251.15,
    "kind": "deadline"
   },
   {
    "month": "2026-08",
    "item": "CMF S29 \u2014 4 figs remaining (retail, in person)",
    "from_funds": 21.61,
-   "main_after": 229.54,
-   "ser_after": 316.04,
+   "main_after": 228.39,
+   "ser_after": 218.82,
    "kind": "deadline"
   },
   {
    "month": "2026-08",
    "item": "Marilyn Monroe (Art)",
    "from_funds": 183.96,
-   "main_after": 229.54,
-   "ser_after": 316.04,
+   "main_after": 228.39,
+   "ser_after": 218.82,
    "kind": "backlog v6.2%"
+  },
+  {
+   "month": "2026-08",
+   "item": "Series 24 (71037) set",
+   "from_funds": 98.37,
+   "main_after": 228.39,
+   "ser_after": 218.82,
+   "kind": "backlog v6.0%"
+  },
+  {
+   "month": "2026-09",
+   "item": "Modern Art",
+   "from_funds": 119.37,
+   "main_after": 478.39,
+   "ser_after": 349.45,
+   "kind": "backlog v5.5%"
   },
   {
    "month": "2026-11",
    "item": "BrickLink University of Science (BDP S8)",
    "from_funds": 389.69,
    "main_after": 0.0,
-   "ser_after": 737.59,
-   "kind": "deadline"
-  },
-  {
-   "month": "2026-11",
-   "item": "Botanical Garden",
-   "from_funds": 357.21,
-   "main_after": 0.0,
-   "ser_after": 737.59,
-   "kind": "deadline"
-  },
-  {
-   "month": "2026-11",
-   "item": "Natural History Museum",
-   "from_funds": 324.74,
-   "main_after": 0.0,
-   "ser_after": 737.59,
+   "ser_after": 658.39,
    "kind": "deadline"
   },
   {
@@ -1096,7 +1058,55 @@
    "item": "Sagrada Fam\u00edlia (net of Insiders pts)",
    "from_funds": 236.35,
    "main_after": 0.0,
-   "ser_after": 737.59,
+   "ser_after": 658.39,
+   "kind": "deadline"
+  },
+  {
+   "month": "2026-11",
+   "item": "Series 26 Space (71046) set",
+   "from_funds": 98.51,
+   "main_after": 0.0,
+   "ser_after": 658.39,
+   "kind": "deadline"
+  },
+  {
+   "month": "2026-11",
+   "item": "Series 25 (71045) set",
+   "from_funds": 93.09,
+   "main_after": 0.0,
+   "ser_after": 658.39,
+   "kind": "deadline"
+  },
+  {
+   "month": "2026-11",
+   "item": "Marvel S2 71039 set",
+   "from_funds": 92.01,
+   "main_after": 0.0,
+   "ser_after": 658.39,
+   "kind": "deadline"
+  },
+  {
+   "month": "2026-11",
+   "item": "Spider-Verse 71050 set",
+   "from_funds": 86.6,
+   "main_after": 0.0,
+   "ser_after": 658.39,
+   "kind": "deadline"
+  },
+  {
+   "month": "2026-11",
+   "item": "D&D 71047 set",
+   "from_funds": 86.6,
+   "main_after": 0.0,
+   "ser_after": 658.39,
+   "kind": "deadline"
+  },
+  {
+   "month": "2026-11",
+   "item": "F1 71049 set",
+   "from_funds": 86.6,
+   "main_after": 0.0,
+   "ser_after": 658.39,
    "kind": "deadline"
   },
   {
@@ -1104,54 +1114,38 @@
    "item": "Ghostbusters Firehouse [gift $600.00]",
    "from_funds": 458.69,
    "main_after": 250.0,
-   "ser_after": 428.6,
+   "ser_after": 449.7,
    "kind": "backlog"
-  },
-  {
-   "month": "2026-12",
-   "item": "Series 24 (71037) set",
-   "from_funds": 100.3,
-   "main_after": 250.0,
-   "ser_after": 428.6,
-   "kind": "backlog v6.0%"
   },
   {
    "month": "2027-01",
    "item": "Spider-Man (Art)",
    "from_funds": 333.99,
    "main_after": 500.0,
-   "ser_after": 223.09,
+   "ser_after": 171.92,
    "kind": "backlog v6.5%"
   },
   {
    "month": "2027-01",
-   "item": "Modern Art",
-   "from_funds": 121.52,
-   "main_after": 500.0,
-   "ser_after": 223.09,
-   "kind": "backlog v5.5%"
-  },
-  {
-   "month": "2027-02",
    "item": "Series 23 (71034) set",
-   "from_funds": 95.05,
-   "main_after": 672.27,
-   "ser_after": 0.0,
+   "from_funds": 94.67,
+   "main_after": 500.0,
+   "ser_after": 171.92,
    "kind": "backlog v5.0%"
   },
   {
-   "month": "2027-02",
+   "month": "2027-01",
    "item": "Series 22 (71032) set",
-   "from_funds": 99.53,
-   "main_after": 672.27,
-   "ser_after": 0.0,
+   "from_funds": 99.12,
+   "main_after": 500.0,
+   "ser_after": 171.92,
    "kind": "backlog v5.0%"
   },
   {
    "month": "2027-02",
    "item": "Series 21 (71029) set",
    "from_funds": 106.24,
-   "main_after": 672.27,
+   "main_after": 693.45,
    "ser_after": 0.0,
    "kind": "backlog v5.0%"
   },
@@ -1159,7 +1153,7 @@
    "month": "2027-02",
    "item": "Macaw Parrots (Art)",
    "from_funds": 101.74,
-   "main_after": 672.27,
+   "main_after": 693.45,
    "ser_after": 0.0,
    "kind": "backlog v4.5%"
   },
@@ -1167,15 +1161,15 @@
    "month": "2027-02",
    "item": "Disney 100 71038 set",
    "from_funds": 148.26,
-   "main_after": 672.27,
+   "main_after": 693.45,
    "ser_after": 0.0,
    "kind": "backlog v4.5%"
   },
   {
-   "month": "2027-03",
+   "month": "2027-02",
    "item": "Muppets 71033 set",
-   "from_funds": 122.63,
-   "main_after": 708.94,
+   "from_funds": 122.23,
+   "main_after": 693.45,
    "ser_after": 0.0,
    "kind": "backlog v4.0%"
   },
@@ -1183,31 +1177,47 @@
    "month": "2027-03",
    "item": "Marvel S1 71031 set",
    "from_funds": 144.92,
-   "main_after": 708.94,
+   "main_after": 666.16,
    "ser_after": 0.0,
    "kind": "backlog v4.0%"
   },
   {
    "month": "2027-03",
-   "item": "Mickey Mouse (Art)",
-   "from_funds": 195.78,
-   "main_after": 708.94,
+   "item": "Elvis (Art)",
+   "from_funds": 260.18,
+   "main_after": 666.16,
    "ser_after": 0.0,
-   "kind": "backlog v3.8%"
+   "kind": "backlog v4.0%"
+  },
+  {
+   "month": "2027-03",
+   "item": "Harry Potter S2 71028 set",
+   "from_funds": 122.19,
+   "main_after": 666.16,
+   "ser_after": 0.0,
+   "kind": "backlog v3.5%"
   },
   {
    "month": "2027-04",
-   "item": "Detective's Office",
-   "from_funds": 545.76,
-   "main_after": 663.18,
+   "item": "Series 20 (71027) set",
+   "from_funds": 279.61,
+   "main_after": 690.16,
    "ser_after": 0.0,
-   "kind": "backlog v4.3%"
+   "kind": "backlog v4.0%"
+  },
+  {
+   "month": "2027-04",
+   "item": "Mickey Mouse (Art)",
+   "from_funds": 196.39,
+   "main_after": 690.16,
+   "ser_after": 0.0,
+   "kind": "backlog v3.8%"
   },
   {
    "month": "2027-05",
    "item": "Notre-Dame de Paris",
    "from_funds": 248.96,
-   "main_after": 599.4,
+   "main_after": 626.38,
    "ser_after": 96.02,
    "kind": "deadline"
   },
@@ -1215,7 +1225,7 @@
    "month": "2027-05",
    "item": "CMF Sep 2026 licensed series (retail)",
    "from_funds": 64.82,
-   "main_after": 599.4,
+   "main_after": 626.38,
    "ser_after": 96.02,
    "kind": "deadline"
   },
@@ -1223,7 +1233,7 @@
    "month": "2027-05",
    "item": "Floral Art",
    "from_funds": 153.98,
-   "main_after": 599.4,
+   "main_after": 626.38,
    "ser_after": 96.02,
    "kind": "backlog v3.6%"
   },
@@ -1231,7 +1241,7 @@
    "month": "2027-06",
    "item": "Shopping Street (2026 modular) [gift $270.61]",
    "from_funds": 0.0,
-   "main_after": 650.5,
+   "main_after": 661.88,
    "ser_after": 0.0,
    "kind": "deadline"
   },
@@ -1239,207 +1249,191 @@
    "month": "2027-06",
    "item": "Fire Brigade [gift $600.00]",
    "from_funds": 165.1,
-   "main_after": 650.5,
+   "main_after": 661.88,
    "ser_after": 0.0,
    "kind": "backlog"
   },
   {
    "month": "2027-06",
-   "item": "Elvis (Art)",
-   "from_funds": 262.75,
-   "main_after": 650.5,
+   "item": "The Beatles (Art)",
+   "from_funds": 278.35,
+   "main_after": 661.88,
    "ser_after": 0.0,
-   "kind": "backlog v4.0%"
+   "kind": "backlog v3.7%"
   },
   {
    "month": "2027-06",
    "item": "Series 15 (71011) set",
    "from_funds": 117.07,
-   "main_after": 650.5,
+   "main_after": 661.88,
    "ser_after": 0.0,
    "kind": "backlog v3.0%"
   },
   {
    "month": "2027-07",
-   "item": "Series 20 (71027) set",
-   "from_funds": 282.37,
-   "main_after": 744.53,
-   "ser_after": 0.0,
-   "kind": "backlog v4.0%"
-  },
-  {
-   "month": "2027-07",
-   "item": "Harry Potter S2 71028 set",
-   "from_funds": 123.6,
-   "main_after": 744.53,
-   "ser_after": 0.0,
-   "kind": "backlog v3.5%"
-  },
-  {
-   "month": "2027-08",
-   "item": "The Beatles (Art)",
-   "from_funds": 280.04,
-   "main_after": 666.6,
-   "ser_after": 0.0,
-   "kind": "backlog v3.7%"
-  },
-  {
-   "month": "2027-08",
    "item": "Looney Tunes 71030 set",
-   "from_funds": 169.03,
-   "main_after": 666.6,
+   "from_funds": 168.55,
+   "main_after": 680.52,
+   "ser_after": 0.0,
+   "kind": "backlog v3.5%"
+  },
+  {
+   "month": "2027-07",
+   "item": "Series 19 (71025) set",
+   "from_funds": 184.27,
+   "main_after": 680.52,
+   "ser_after": 0.0,
+   "kind": "backlog v3.5%"
+  },
+  {
+   "month": "2027-07",
+   "item": "LEGO Movie 2 71023 set",
+   "from_funds": 128.54,
+   "main_after": 680.52,
+   "ser_after": 0.0,
+   "kind": "backlog v3.0%"
+  },
+  {
+   "month": "2027-08",
+   "item": "Series 18 (71021, 17 figs) set",
+   "from_funds": 194.94,
+   "main_after": 720.77,
    "ser_after": 0.0,
    "kind": "backlog v3.5%"
   },
   {
    "month": "2027-08",
-   "item": "LEGO Movie 2 71023 set",
-   "from_funds": 128.86,
-   "main_after": 666.6,
+   "item": "Harry Potter S1 71022 set",
+   "from_funds": 264.81,
+   "main_after": 720.77,
    "ser_after": 0.0,
-   "kind": "backlog v3.0%"
+   "kind": "backlog v3.5%"
   },
   {
    "month": "2027-09",
    "item": "CMF Jan 2027 numbered (retail)",
    "from_funds": 64.82,
-   "main_after": 720.95,
+   "main_after": 660.63,
    "ser_after": 0.0,
    "kind": "deadline"
   },
   {
    "month": "2027-09",
-   "item": "Series 19 (71025) set",
-   "from_funds": 185.33,
-   "main_after": 720.95,
+   "item": "Iron Man (Art)",
+   "from_funds": 253.14,
+   "main_after": 660.63,
    "ser_after": 0.0,
-   "kind": "backlog v3.5%"
+   "kind": "backlog v3.2%"
   },
   {
    "month": "2027-09",
-   "item": "Series 18 (71021, 17 figs) set",
-   "from_funds": 195.5,
-   "main_after": 720.95,
+   "item": "Rolling Stones (Art)",
+   "from_funds": 242.18,
+   "main_after": 660.63,
    "ser_after": 0.0,
-   "kind": "backlog v3.5%"
+   "kind": "backlog v3.1%"
   },
   {
    "month": "2027-10",
-   "item": "Grand Emporium",
-   "from_funds": 563.89,
-   "main_after": 657.06,
+   "item": "Series 17 (71018) set",
+   "from_funds": 140.75,
+   "main_after": 721.49,
    "ser_after": 0.0,
-   "kind": "backlog v3.6%"
+   "kind": "backlog v3.0%"
+  },
+  {
+   "month": "2027-10",
+   "item": "Series 12 (71007) set",
+   "from_funds": 140.75,
+   "main_after": 721.49,
+   "ser_after": 0.0,
+   "kind": "backlog v3.0%"
+  },
+  {
+   "month": "2027-10",
+   "item": "Series 13 (71008) set",
+   "from_funds": 157.64,
+   "main_after": 721.49,
+   "ser_after": 0.0,
+   "kind": "backlog v3.0%"
   },
   {
    "month": "2027-11",
    "item": "Van Gogh Sunflowers",
    "from_funds": 216.49,
-   "main_after": 603.98,
-   "ser_after": 108.9,
+   "main_after": 668.41,
+   "ser_after": 85.19,
    "kind": "deadline"
   },
   {
    "month": "2027-11",
    "item": "LOVE (Robert Indiana)",
    "from_funds": 86.59,
-   "main_after": 603.98,
-   "ser_after": 108.9,
+   "main_after": 668.41,
+   "ser_after": 85.19,
    "kind": "deadline"
   },
   {
    "month": "2027-11",
-   "item": "Series 17 (71018) set",
-   "from_funds": 141.1,
-   "main_after": 603.98,
-   "ser_after": 108.9,
+   "item": "Series 16 (71013) set",
+   "from_funds": 164.81,
+   "main_after": 668.41,
+   "ser_after": 85.19,
    "kind": "backlog v3.0%"
   },
   {
    "month": "2027-12",
    "item": "Market Street part-out build [gift $600.00]",
    "from_funds": 2.0,
-   "main_after": 687.88,
+   "main_after": 690.31,
    "ser_after": 0.0,
    "kind": "backlog"
   },
   {
    "month": "2027-12",
-   "item": "Harry Potter S1 71022 set",
-   "from_funds": 267.86,
-   "main_after": 687.88,
+   "item": "Detective's Office",
+   "from_funds": 561.29,
+   "main_after": 690.31,
    "ser_after": 0.0,
-   "kind": "backlog v3.5%"
-  },
-  {
-   "month": "2027-12",
-   "item": "Iron Man (Art)",
-   "from_funds": 255.14,
-   "main_after": 687.88,
-   "ser_after": 0.0,
-   "kind": "backlog v3.2%"
+   "kind": "backlog v4.3%"
   },
   {
    "month": "2028-01",
    "item": "CMF May 2027 (retail)",
    "from_funds": 64.82,
-   "main_after": 736.62,
+   "main_after": 773.31,
    "ser_after": 0.0,
    "kind": "deadline"
   },
   {
    "month": "2028-01",
-   "item": "Rolling Stones (Art)",
-   "from_funds": 244.65,
-   "main_after": 736.62,
+   "item": "Art Project",
+   "from_funds": 170.68,
+   "main_after": 773.31,
    "ser_after": 0.0,
-   "kind": "backlog v3.1%"
+   "kind": "backlog v3.0%"
   },
   {
    "month": "2028-01",
-   "item": "Series 12 (71007) set",
-   "from_funds": 141.79,
-   "main_after": 736.62,
-   "ser_after": 0.0,
-   "kind": "backlog v3.0%"
-  },
-  {
-   "month": "2028-02",
-   "item": "Series 13 (71008) set",
-   "from_funds": 159.2,
-   "main_after": 740.28,
-   "ser_after": 0.0,
-   "kind": "backlog v3.0%"
-  },
-  {
-   "month": "2028-02",
-   "item": "Series 16 (71013) set",
-   "from_funds": 166.03,
-   "main_after": 740.28,
-   "ser_after": 0.0,
-   "kind": "backlog v3.0%"
-  },
-  {
-   "month": "2028-02",
-   "item": "Art Project",
-   "from_funds": 171.11,
-   "main_after": 740.28,
-   "ser_after": 0.0,
-   "kind": "backlog v3.0%"
-  },
-  {
-   "month": "2028-03",
    "item": "DC 71026 set",
-   "from_funds": 182.4,
-   "main_after": 693.08,
+   "from_funds": 181.5,
+   "main_after": 773.31,
    "ser_after": 0.0,
    "kind": "backlog v3.0%"
+  },
+  {
+   "month": "2028-02",
+   "item": "Grand Emporium",
+   "from_funds": 570.58,
+   "main_after": 702.73,
+   "ser_after": 0.0,
+   "kind": "backlog v3.6%"
   },
   {
    "month": "2028-03",
    "item": "Ninjago Movie 71019 set",
    "from_funds": 182.4,
-   "main_after": 693.08,
+   "main_after": 662.73,
    "ser_after": 0.0,
    "kind": "backlog v3.0%"
   },
@@ -1447,15 +1441,23 @@
    "month": "2028-03",
    "item": "Series 14 Monsters (71010) set",
    "from_funds": 182.4,
-   "main_after": 693.08,
+   "main_after": 662.73,
    "ser_after": 0.0,
    "kind": "backlog v3.0%"
+  },
+  {
+   "month": "2028-03",
+   "item": "Simpsons S2 71009 set",
+   "from_funds": 175.2,
+   "main_after": 662.73,
+   "ser_after": 0.0,
+   "kind": "backlog v2.5%"
   },
   {
    "month": "2028-04",
    "item": "Batman Movie 71017 set",
    "from_funds": 194.28,
-   "main_after": 677.68,
+   "main_after": 774.17,
    "ser_after": 0.0,
    "kind": "backlog v3.0%"
   },
@@ -1463,71 +1465,71 @@
    "month": "2028-04",
    "item": "Batman Movie 2 71020 set",
    "from_funds": 194.28,
-   "main_after": 677.68,
+   "main_after": 774.17,
    "ser_after": 0.0,
    "kind": "backlog v3.0%"
-  },
-  {
-   "month": "2028-04",
-   "item": "DFB German Football 71014 set",
-   "from_funds": 126.84,
-   "main_after": 677.68,
-   "ser_after": 0.0,
-   "kind": "backlog v2.0%"
   },
   {
    "month": "2028-05",
    "item": "Tudor Corner",
    "from_funds": 248.96,
-   "main_after": 462.36,
-   "ser_after": 250.0,
+   "main_after": 558.85,
+   "ser_after": 122.95,
    "kind": "deadline"
   },
   {
    "month": "2028-05",
    "item": "Cherry Blossom Landscape",
    "from_funds": 151.54,
-   "main_after": 462.36,
-   "ser_after": 250.0,
+   "main_after": 558.85,
+   "ser_after": 122.95,
    "kind": "deadline"
   },
   {
    "month": "2028-05",
    "item": "CMF Sep 2027 licensed (retail)",
    "from_funds": 64.82,
-   "main_after": 462.36,
-   "ser_after": 250.0,
+   "main_after": 558.85,
+   "ser_after": 122.95,
    "kind": "deadline"
+  },
+  {
+   "month": "2028-05",
+   "item": "DFB German Football 71014 set",
+   "from_funds": 127.05,
+   "main_after": 558.85,
+   "ser_after": 122.95,
+   "kind": "backlog v2.0%"
   },
   {
    "month": "2028-06",
    "item": "2027 Modular (Jan release, placeholder) [gift $292.26]",
    "from_funds": 0.0,
-   "main_after": 712.36,
-   "ser_after": 34.26,
+   "main_after": 716.06,
+   "ser_after": 0.0,
    "kind": "deadline"
   },
   {
    "month": "2028-06",
    "item": "Caf\u00e9 Corner part-out build [gift $600.00]",
    "from_funds": 268.21,
-   "main_after": 712.36,
-   "ser_after": 34.26,
+   "main_after": 716.06,
+   "ser_after": 0.0,
    "kind": "backlog"
   },
   {
    "month": "2028-06",
    "item": "Disney S2 71024 set",
    "from_funds": 197.53,
-   "main_after": 712.36,
-   "ser_after": 34.26,
+   "main_after": 716.06,
+   "ser_after": 0.0,
    "kind": "backlog v3.0%"
   },
   {
    "month": "2028-07",
    "item": "Disney S1 71012 set",
    "from_funds": 269.4,
-   "main_after": 751.61,
+   "main_after": 721.05,
    "ser_after": 0.0,
    "kind": "backlog v3.0%"
   },
@@ -1535,7 +1537,7 @@
    "month": "2028-07",
    "item": "The Sith (Art)",
    "from_funds": 225.61,
-   "main_after": 751.61,
+   "main_after": 721.05,
    "ser_after": 0.0,
    "kind": "backlog v2.7%"
   },
@@ -1543,23 +1545,23 @@
    "month": "2028-08",
    "item": "The Kiss (Gustav Klimt)",
    "from_funds": 324.74,
-   "main_after": 676.87,
-   "ser_after": 72.99,
+   "main_after": 646.31,
+   "ser_after": 67.28,
    "kind": "deadline"
   },
   {
    "month": "2028-08",
-   "item": "Simpsons S2 71009 set",
-   "from_funds": 177.01,
-   "main_after": 676.87,
-   "ser_after": 72.99,
+   "item": "LEGO Movie 71004 set",
+   "from_funds": 182.72,
+   "main_after": 646.31,
+   "ser_after": 67.28,
    "kind": "backlog v2.5%"
   },
   {
    "month": "2028-09",
    "item": "CMF Jan 2028 numbered (retail)",
    "from_funds": 64.82,
-   "main_after": 693.34,
+   "main_after": 657.07,
    "ser_after": 0.0,
    "kind": "deadline"
   },
@@ -1567,103 +1569,87 @@
    "month": "2028-09",
    "item": "Assembly Square",
    "from_funds": 491.7,
-   "main_after": 693.34,
+   "main_after": 657.07,
    "ser_after": 0.0,
    "kind": "backlog v3.0%"
   },
   {
    "month": "2028-10",
-   "item": "LEGO Movie 71004 set",
-   "from_funds": 183.47,
-   "main_after": 766.77,
-   "ser_after": 0.0,
-   "kind": "backlog v2.5%"
-  },
-  {
-   "month": "2028-10",
    "item": "Simpsons S1 71005 set",
    "from_funds": 243.1,
-   "main_after": 766.77,
-   "ser_after": 0.0,
+   "main_after": 907.07,
+   "ser_after": 6.9,
    "kind": "backlog v2.5%"
   },
   {
    "month": "2028-11",
    "item": "Monet Water Lilies",
    "from_funds": 270.61,
-   "main_after": 421.4,
-   "ser_after": 250.0,
+   "main_after": 561.7,
+   "ser_after": 256.9,
    "kind": "deadline"
   },
   {
    "month": "2028-11",
    "item": "2027 Art release #1 (placeholder)",
    "from_funds": 162.38,
-   "main_after": 421.4,
-   "ser_after": 250.0,
+   "main_after": 561.7,
+   "ser_after": 256.9,
    "kind": "deadline"
   },
   {
    "month": "2028-11",
    "item": "2027 Art release #2 (placeholder)",
    "from_funds": 162.38,
-   "main_after": 421.4,
-   "ser_after": 250.0,
+   "main_after": 561.7,
+   "ser_after": 256.9,
    "kind": "deadline"
   },
   {
    "month": "2028-12",
-   "item": "Town Hall (USED \u2014 >$1k sealed rule) [gift $600.00]",
-   "from_funds": 156.56,
-   "main_after": 671.4,
-   "ser_after": 84.37,
+   "item": "BrickLink Construction Site [gift $600.00]",
+   "from_funds": 525.79,
+   "main_after": 792.81,
+   "ser_after": 0.0,
    "kind": "backlog"
-  },
-  {
-   "month": "2028-12",
-   "item": "Series 9 (71000) \u2014 singles edge out lot",
-   "from_funds": 259.07,
-   "main_after": 671.4,
-   "ser_after": 84.37,
-   "kind": "backlog v2.5%"
   },
   {
    "month": "2029-01",
    "item": "CMF May 2028 (retail)",
    "from_funds": 64.82,
-   "main_after": 743.29,
+   "main_after": 703.02,
    "ser_after": 0.0,
    "kind": "deadline"
   },
   {
    "month": "2029-01",
-   "item": "Series 10 (71001, excl Mr. Gold) set",
-   "from_funds": 265.37,
-   "main_after": 743.29,
+   "item": "Series 9 (71000) \u2014 singles edge out lot",
+   "from_funds": 259.6,
+   "main_after": 703.02,
    "ser_after": 0.0,
    "kind": "backlog v2.5%"
   },
   {
    "month": "2029-01",
-   "item": "Series 4 (8804) set",
-   "from_funds": 182.29,
-   "main_after": 743.29,
-   "ser_after": 0.0,
-   "kind": "backlog v2.0%"
-  },
-  {
-   "month": "2029-02",
-   "item": "Series 11 (71002) \u2014 buy figs individually",
-   "from_funds": 300.61,
-   "main_after": 725.85,
+   "item": "Series 10 (71001, excl Mr. Gold) set",
+   "from_funds": 265.37,
+   "main_after": 703.02,
    "ser_after": 0.0,
    "kind": "backlog v2.5%"
   },
   {
    "month": "2029-02",
-   "item": "Series 5 (8805) set",
-   "from_funds": 216.83,
-   "main_after": 725.85,
+   "item": "Series 11 (71002) \u2014 buy figs individually",
+   "from_funds": 300.61,
+   "main_after": 719.82,
+   "ser_after": 0.0,
+   "kind": "backlog v2.5%"
+  },
+  {
+   "month": "2029-02",
+   "item": "Series 4 (8804) set",
+   "from_funds": 182.59,
+   "main_after": 719.82,
    "ser_after": 0.0,
    "kind": "backlog v2.0%"
   },
@@ -1671,23 +1657,23 @@
    "month": "2029-03",
    "item": "Corner Garage",
    "from_funds": 405.83,
-   "main_after": 820.02,
+   "main_after": 813.99,
    "ser_after": 0.0,
    "kind": "backlog v2.5%"
   },
   {
    "month": "2029-04",
-   "item": "Series 3 (8803) set",
-   "from_funds": 228.99,
-   "main_after": 680.22,
+   "item": "Series 5 (8805) set",
+   "from_funds": 217.55,
+   "main_after": 697.09,
    "ser_after": 0.0,
    "kind": "backlog v2.0%"
   },
   {
    "month": "2029-04",
-   "item": "Series 2 (8684) set",
-   "from_funds": 240.45,
-   "main_after": 680.22,
+   "item": "Series 3 (8803) set",
+   "from_funds": 228.99,
+   "main_after": 697.09,
    "ser_after": 0.0,
    "kind": "backlog v2.0%"
   },
@@ -1695,7 +1681,7 @@
    "month": "2029-04",
    "item": "Hogwarts Crests (Art)",
    "from_funds": 170.36,
-   "main_after": 680.22,
+   "main_after": 697.09,
    "ser_after": 0.0,
    "kind": "backlog v1.0%"
   },
@@ -1703,39 +1689,47 @@
    "month": "2029-05",
    "item": "CMF Sep 2028 licensed (retail)",
    "from_funds": 64.82,
-   "main_after": 865.4,
-   "ser_after": 4.57,
+   "main_after": 882.27,
+   "ser_after": 9.15,
    "kind": "deadline"
   },
   {
    "month": "2029-05",
-   "item": "Series 6 (8827) set",
-   "from_funds": 245.43,
-   "main_after": 865.4,
-   "ser_after": 4.57,
+   "item": "Series 2 (8684) set",
+   "from_funds": 240.85,
+   "main_after": 882.27,
+   "ser_after": 9.15,
    "kind": "backlog v2.0%"
   },
   {
    "month": "2029-06",
    "item": "2028 Modular (placeholder) [gift $303.09]",
    "from_funds": 0.0,
-   "main_after": 829.64,
+   "main_after": 716.53,
    "ser_after": 0.0,
    "kind": "deadline"
   },
   {
    "month": "2029-06",
-   "item": "BrickLink Construction Site [gift $600.00]",
-   "from_funds": 540.33,
-   "main_after": 829.64,
+   "item": "Town Hall (USED \u2014 >$1k sealed rule) [gift $600.00]",
+   "from_funds": 164.84,
+   "main_after": 716.53,
    "ser_after": 0.0,
    "kind": "backlog"
   },
   {
-   "month": "2029-07",
+   "month": "2029-06",
+   "item": "Series 6 (8827) set",
+   "from_funds": 245.84,
+   "main_after": 716.53,
+   "ser_after": 0.0,
+   "kind": "backlog v2.0%"
+  },
+  {
+   "month": "2029-06",
    "item": "Series 7 (8831) set",
-   "from_funds": 264.65,
-   "main_after": 794.58,
+   "from_funds": 264.21,
+   "main_after": 716.53,
    "ser_after": 0.0,
    "kind": "backlog v2.0%"
   },
@@ -1743,7 +1737,7 @@
    "month": "2029-07",
    "item": "Series 8 (8833) set",
    "from_funds": 270.41,
-   "main_after": 794.58,
+   "main_after": 946.12,
    "ser_after": 0.0,
    "kind": "backlog v2.0%"
   },
@@ -1751,7 +1745,15 @@
    "month": "2029-08",
    "item": "Team GB 8909 (UK Olympics) set",
    "from_funds": 357.29,
-   "main_after": 937.29,
+   "main_after": 694.65,
+   "ser_after": 0.0,
+   "kind": "backlog v2.0%"
+  },
+  {
+   "month": "2029-08",
+   "item": "Series 1 (8683) \u2014 buy figs individually",
+   "from_funds": 394.18,
+   "main_after": 694.65,
    "ser_after": 0.0,
    "kind": "backlog v2.0%"
   },
@@ -1759,23 +1761,15 @@
    "month": "2029-09",
    "item": "CMF Jan 2029 numbered (retail)",
    "from_funds": 64.82,
-   "main_after": 680.35,
+   "main_after": 832.54,
    "ser_after": 0.0,
    "kind": "deadline"
   },
   {
    "month": "2029-09",
-   "item": "Series 1 (8683) \u2014 buy figs individually",
-   "from_funds": 394.83,
-   "main_after": 680.35,
-   "ser_after": 0.0,
-   "kind": "backlog v2.0%"
-  },
-  {
-   "month": "2029-09",
    "item": "Jim Lee Batman (Art)",
    "from_funds": 297.29,
-   "main_after": 680.35,
+   "main_after": 832.54,
    "ser_after": 0.0,
    "kind": "backlog v1.8%"
   },
@@ -1783,7 +1777,7 @@
    "month": "2029-10",
    "item": "Downtown Diner",
    "from_funds": 484.65,
-   "main_after": 695.7,
+   "main_after": 847.89,
    "ser_after": 0.0,
    "kind": "backlog v2.0%"
   },
@@ -1791,7 +1785,7 @@
    "month": "2029-11",
    "item": "2028 Art release #1 (placeholder)",
    "from_funds": 162.38,
-   "main_after": 620.94,
+   "main_after": 773.13,
    "ser_after": 250.0,
    "kind": "deadline"
   },
@@ -1799,7 +1793,7 @@
    "month": "2029-11",
    "item": "2028 Art release #2 (placeholder)",
    "from_funds": 162.38,
-   "main_after": 620.94,
+   "main_after": 773.13,
    "ser_after": 250.0,
    "kind": "deadline"
   },
@@ -1807,7 +1801,7 @@
    "month": "2029-12",
    "item": "Brick Bank [gift $600.00]",
    "from_funds": 164.88,
-   "main_after": 870.94,
+   "main_after": 1023.13,
    "ser_after": 335.12,
    "kind": "backlog"
   },
@@ -1815,15 +1809,15 @@
    "month": "2030-01",
    "item": "CMF May 2029 (retail)",
    "from_funds": 64.82,
-   "main_after": 1056.12,
+   "main_after": 1208.31,
    "ser_after": 585.12,
    "kind": "deadline"
   },
   {
-   "month": "2030-03",
+   "month": "2030-02",
    "item": "Green Grocer part-out build",
-   "from_funds": 1545.51,
-   "main_after": 1095.73,
+   "from_funds": 1541.71,
+   "main_after": 751.72,
    "ser_after": 0.0,
    "kind": "backlog v3.0%"
   },
@@ -1831,111 +1825,123 @@
    "month": "2030-05",
    "item": "CMF Sep 2029 licensed (retail)",
    "from_funds": 64.82,
-   "main_after": 1530.91,
-   "ser_after": 500.0,
+   "main_after": 1436.9,
+   "ser_after": 750.0,
    "kind": "deadline"
   },
   {
    "month": "2030-06",
    "item": "2029 Modular (placeholder) [gift $313.91]",
    "from_funds": 0.0,
-   "main_after": 1780.91,
-   "ser_after": 750.0,
+   "main_after": 1686.9,
+   "ser_after": 1000.0,
    "kind": "deadline"
   },
   {
    "month": "2030-11",
    "item": "2029 Art release #1 (placeholder)",
    "from_funds": 162.38,
-   "main_after": 2706.15,
-   "ser_after": 2000.0,
+   "main_after": 2612.14,
+   "ser_after": 2250.0,
    "kind": "deadline"
   },
   {
    "month": "2030-11",
    "item": "2029 Art release #2 (placeholder)",
    "from_funds": 162.38,
-   "main_after": 2706.15,
-   "ser_after": 2000.0,
+   "main_after": 2612.14,
+   "ser_after": 2250.0,
    "kind": "deadline"
   },
   {
    "month": "2031-06",
    "item": "2030 Modular (Jan release, placeholder) [gift $324.74]",
    "from_funds": 0.0,
-   "main_after": 4456.15,
-   "ser_after": 3750.0,
+   "main_after": 4362.14,
+   "ser_after": 4000.0,
    "kind": "deadline"
   },
   {
    "month": "2032-06",
    "item": "2031 Modular (Jan release, placeholder)",
    "from_funds": 335.56,
-   "main_after": 7120.59,
-   "ser_after": 6750.0,
+   "main_after": 7026.58,
+   "ser_after": 7000.0,
    "kind": "deadline"
   }
  ],
  "transfers": [
   {
    "month": "2026-06",
-   "amount": 18.89,
-   "dir": "Main\u2192Ser",
-   "for": "Series 25 (71045) set"
-  },
-  {
-   "month": "2026-06",
-   "amount": 98.51,
-   "dir": "Main\u2192Ser",
-   "for": "Series 26 Space (71046) set"
-  },
-  {
-   "month": "2026-06",
-   "amount": 92.01,
-   "dir": "Main\u2192Ser",
-   "for": "Marvel S2 71039 set"
-  },
-  {
-   "month": "2026-11",
-   "amount": 92.1,
+   "amount": 209.41,
    "dir": "Ser\u2192Main",
    "for": "Natural History Museum"
   },
   {
-   "month": "2026-11",
-   "amount": 236.35,
+   "month": "2026-06",
+   "amount": 70.35,
    "dir": "Ser\u2192Main",
-   "for": "Sagrada Fam\u00edlia (net of Insiders pts)"
+   "for": "Fauna Tiger"
+  },
+  {
+   "month": "2026-07",
+   "amount": 53.09,
+   "dir": "Ser\u2192Main",
+   "for": "BrickLink Sushi Restaurant"
+  },
+  {
+   "month": "2026-11",
+   "amount": 17.86,
+   "dir": "Ser\u2192Main",
+   "for": "Spider-Verse 71050 set"
+  },
+  {
+   "month": "2026-11",
+   "amount": 86.6,
+   "dir": "Ser\u2192Main",
+   "for": "D&D 71047 set"
+  },
+  {
+   "month": "2026-11",
+   "amount": 86.6,
+   "dir": "Ser\u2192Main",
+   "for": "F1 71049 set"
   },
   {
    "month": "2027-02",
-   "amount": 77.73,
+   "amount": 56.55,
    "dir": "Main\u2192Ser",
-   "for": "Disney 100 71038 set"
+   "for": "Muppets 71033 set"
   },
   {
    "month": "2027-03",
-   "amount": 17.55,
+   "amount": 155.1,
    "dir": "Main\u2192Ser",
-   "for": "Marvel S1 71031 set"
+   "for": "Elvis (Art)"
   },
   {
    "month": "2027-03",
-   "amount": 195.78,
+   "amount": 122.19,
+   "dir": "Main\u2192Ser",
+   "for": "Harry Potter S2 71028 set"
+  },
+  {
+   "month": "2027-04",
+   "amount": 29.61,
+   "dir": "Main\u2192Ser",
+   "for": "Series 20 (71027) set"
+  },
+  {
+   "month": "2027-04",
+   "amount": 196.39,
    "dir": "Main\u2192Ser",
    "for": "Mickey Mouse (Art)"
   },
   {
-   "month": "2027-04",
-   "amount": 295.76,
-   "dir": "Main\u2192Ser",
-   "for": "Detective's Office"
-  },
-  {
    "month": "2027-06",
-   "amount": 81.83,
+   "amount": 97.43,
    "dir": "Main\u2192Ser",
-   "for": "Elvis (Art)"
+   "for": "The Beatles (Art)"
   },
   {
    "month": "2027-06",
@@ -1945,81 +1951,75 @@
   },
   {
    "month": "2027-07",
-   "amount": 32.37,
+   "amount": 102.82,
    "dir": "Main\u2192Ser",
-   "for": "Series 20 (71027) set"
+   "for": "Series 19 (71025) set"
   },
   {
    "month": "2027-07",
-   "amount": 123.6,
-   "dir": "Main\u2192Ser",
-   "for": "Harry Potter S2 71028 set"
-  },
-  {
-   "month": "2027-08",
-   "amount": 30.04,
-   "dir": "Main\u2192Ser",
-   "for": "The Beatles (Art)"
-  },
-  {
-   "month": "2027-08",
-   "amount": 169.03,
-   "dir": "Main\u2192Ser",
-   "for": "Looney Tunes 71030 set"
-  },
-  {
-   "month": "2027-08",
-   "amount": 128.86,
+   "amount": 128.54,
    "dir": "Main\u2192Ser",
    "for": "LEGO Movie 2 71023 set"
   },
   {
+   "month": "2027-08",
+   "amount": 209.75,
+   "dir": "Main\u2192Ser",
+   "for": "Harry Potter S1 71022 set"
+  },
+  {
    "month": "2027-09",
-   "amount": 130.83,
-   "dir": "Main\u2192Ser",
-   "for": "Series 18 (71021, 17 figs) set"
-  },
-  {
-   "month": "2027-10",
-   "amount": 313.89,
-   "dir": "Main\u2192Ser",
-   "for": "Grand Emporium"
-  },
-  {
-   "month": "2027-12",
-   "amount": 166.1,
+   "amount": 3.14,
    "dir": "Main\u2192Ser",
    "for": "Iron Man (Art)"
   },
   {
-   "month": "2028-01",
-   "amount": 136.44,
+   "month": "2027-09",
+   "amount": 242.18,
+   "dir": "Main\u2192Ser",
+   "for": "Rolling Stones (Art)"
+  },
+  {
+   "month": "2027-10",
+   "amount": 31.5,
    "dir": "Main\u2192Ser",
    "for": "Series 12 (71007) set"
   },
   {
-   "month": "2028-02",
-   "amount": 75.23,
+   "month": "2027-10",
+   "amount": 157.64,
    "dir": "Main\u2192Ser",
-   "for": "Series 16 (71013) set"
+   "for": "Series 13 (71008) set"
+  },
+  {
+   "month": "2027-12",
+   "amount": 228.1,
+   "dir": "Main\u2192Ser",
+   "for": "Detective's Office"
+  },
+  {
+   "month": "2028-01",
+   "amount": 102.18,
+   "dir": "Main\u2192Ser",
+   "for": "DC 71026 set"
   },
   {
    "month": "2028-02",
-   "amount": 171.11,
+   "amount": 320.58,
    "dir": "Main\u2192Ser",
-   "for": "Art Project"
+   "for": "Grand Emporium"
   },
   {
    "month": "2028-03",
    "amount": 114.8,
    "dir": "Main\u2192Ser",
-   "for": "Ninjago Movie 71019 set"
+   "for": "Series 14 Monsters (71010) set"
   },
   {
    "month": "2028-03",
-   "amount": 182.4,
+   "amount": 175.2,
    "dir": "Main\u2192Ser",
-   "for": "Series 14 Monsters (71010) set"
+   "for": "Simpsons S2 71009 set"
   },
   {
    "month": "2028-04",
@@ -2028,34 +2028,46 @@
    "for": "Batman Movie 2 71020 set"
   },
   {
-   "month": "2028-04",
-   "amount": 126.84,
+   "month": "2028-06",
+   "amount": 92.79,
    "dir": "Main\u2192Ser",
-   "for": "DFB German Football 71014 set"
+   "for": "Disney S2 71024 set"
   },
   {
    "month": "2028-07",
-   "amount": 210.75,
+   "amount": 19.4,
+   "dir": "Main\u2192Ser",
+   "for": "Disney S1 71012 set"
+  },
+  {
+   "month": "2028-07",
+   "amount": 225.61,
    "dir": "Main\u2192Ser",
    "for": "The Sith (Art)"
   },
   {
    "month": "2028-09",
-   "amount": 168.71,
+   "amount": 174.42,
    "dir": "Main\u2192Ser",
    "for": "Assembly Square"
   },
   {
-   "month": "2028-10",
-   "amount": 176.57,
+   "month": "2028-12",
+   "amount": 18.89,
    "dir": "Main\u2192Ser",
-   "for": "Simpsons S1 71005 set"
+   "for": "BrickLink Construction Site"
   },
   {
    "month": "2029-01",
-   "amount": 113.29,
+   "amount": 9.6,
    "dir": "Main\u2192Ser",
-   "for": "Series 4 (8804) set"
+   "for": "Series 9 (71000) \u2014 singles edge out lot"
+  },
+  {
+   "month": "2029-01",
+   "amount": 265.37,
+   "dir": "Main\u2192Ser",
+   "for": "Series 10 (71001, excl Mr. Gold) set"
   },
   {
    "month": "2029-02",
@@ -2065,9 +2077,9 @@
   },
   {
    "month": "2029-02",
-   "amount": 216.83,
+   "amount": 182.59,
    "dir": "Main\u2192Ser",
-   "for": "Series 5 (8805) set"
+   "for": "Series 4 (8804) set"
   },
   {
    "month": "2029-03",
@@ -2077,9 +2089,9 @@
   },
   {
    "month": "2029-04",
-   "amount": 219.44,
+   "amount": 196.54,
    "dir": "Main\u2192Ser",
-   "for": "Series 2 (8684) set"
+   "for": "Series 3 (8803) set"
   },
   {
    "month": "2029-04",
@@ -2089,19 +2101,19 @@
   },
   {
    "month": "2029-06",
-   "amount": 285.76,
+   "amount": 151.53,
    "dir": "Main\u2192Ser",
-   "for": "BrickLink Construction Site"
+   "for": "Series 6 (8827) set"
   },
   {
-   "month": "2029-07",
-   "amount": 14.65,
+   "month": "2029-06",
+   "amount": 264.21,
    "dir": "Main\u2192Ser",
    "for": "Series 7 (8831) set"
   },
   {
    "month": "2029-07",
-   "amount": 270.41,
+   "amount": 20.41,
    "dir": "Main\u2192Ser",
    "for": "Series 8 (8833) set"
   },
@@ -2112,14 +2124,14 @@
    "for": "Team GB 8909 (UK Olympics) set"
   },
   {
-   "month": "2029-09",
-   "amount": 144.83,
+   "month": "2029-08",
+   "amount": 394.18,
    "dir": "Main\u2192Ser",
    "for": "Series 1 (8683) \u2014 buy figs individually"
   },
   {
    "month": "2029-09",
-   "amount": 297.29,
+   "amount": 47.29,
    "dir": "Main\u2192Ser",
    "for": "Jim Lee Batman (Art)"
   },
@@ -2130,16 +2142,16 @@
    "for": "Downtown Diner"
   },
   {
-   "month": "2030-03",
-   "amount": 460.39,
+   "month": "2030-02",
+   "amount": 706.59,
    "dir": "Main\u2192Ser",
    "for": "Green Grocer part-out build"
   }
  ],
  "totals": {
-  "from_funds": 22797.41,
+  "from_funds": 22779.96,
   "gift_money": 5704.61,
-  "backlog_done": "2030-03",
+  "backlog_done": "2030-02",
   "all_caught_up": "backlog clears at backlog_done; later rows are future-release placeholders"
  }
 }
